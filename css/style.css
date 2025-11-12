@@ -16,16 +16,17 @@ body {
 }
  
 .cart-item {
-  display: flex;
+ display: flex; 
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
- 
-.cart-item span {
+
+  .cart-item span {
   flex: 1;
 }
  
 .cart-item button {
   margin-left: 10px;
 }
+

@@ -19,11 +19,3 @@ function removeItem(event) {
   updateTotalPrice(-price);
   item.remove();
 }
-
-addProductButton.addEventListener('click', () =>{
-    let productInput = productNameInput.value;
-    let productItem = document.createElement('li')
-    productItem.innerText = productInput;
-    cart.appendChild(productItem);
-})
-  
