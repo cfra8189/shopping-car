@@ -118,3 +118,51 @@ updateTotalPrice(subtotal);
 - This calls the separate `updateTotalPrice` function and sends it the item's subtotal. 
 
 - This function adds the amount to `totalPrice` and updates the text on the page.
+
+--------------------------------------------------------------------
+
+I messed up SOMEWHERE!!! UGHHHHHHHHHHHHHH!!!!!!!
+
+
+- Delete
+
+item.remove();
+
+- Removes the item from the screen and the shopping list.
+
+I've attached the `removeItem` function to the new ***Remove*** button.
+
+listItem.querySelector('.remove-btn').addEventListener('click', removeItem);
+
+- Clean Up
+
+productNameInput.value = '';
+productPriceInput.value = '';
+productQtyInput.value = ''; 
+
+It clears the input boxes so the user can easily enter the next item.
+
+--------------------------------------------------------------------
+
+*********NOTES***********
+
+Why use `.dataset` in My Shopping Cart
+
+The `.dataset` property lets my JavaScript attach and retrieve specific data directly to the HTML item it creates, without that data being visible to the user. It keeps the math (the subtotal) and the element (`<li>`) together.
+
+1. Storing the Subtotal (When Adding a Product)
+
+When I click "Add Product", my JavaScript calculates the `subtotal` (Price × QTY). This number needs to be saved to the new list item.
+
+listItem.dataset.subtotal = subtotal;
+
+This stores the calculated subtotal value right on this specific `<li>` element.
+
+2. Retrieving the Subtotal (When Removing a Product)
+
+When I click "Remove", my `removeItem` function must know exactly how much to subtract from the `totalPrice`. It uses the stored value.
+
+const subtotal = parseFloat(item.dataset.subtotal);
+
+It looks at this `<li>` element, retrieves the stored value from its `data-subtotal` property, and converts it back to a number so I can subtract it from the Total.
+
