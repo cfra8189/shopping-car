@@ -117,4 +117,4 @@ updateTotalPrice(subtotal);
 
 - This calls the separate `updateTotalPrice` function and sends it the item's subtotal. 
 
-- This function adds the amount to the running `totalPrice` variable and updates the text on the page.
+- This function adds the amount to `totalPrice` and updates the text on the page.
