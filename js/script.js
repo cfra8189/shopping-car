@@ -31,6 +31,18 @@ addProductButton.addEventListener('click', () => {
   const listItem = document.createElement('li');
   listItem.classList.add('cart-item');
 
+    listItem.dataset.subtotal = subtotal; 
 
+  
+    listItem.innerHTML = `
+        <span> ${productInput}</span>
+        <span> ${quantity} x $${unitPrice.toFixed(2)} =  
+        <strong>$${subtotal.toFixed(2)}</strong></span>
+        <button class="remove-btn">Remove</button> 
+    `;
+
+cart.appendChild(listItem);
+
+updateTotalPrice(subtotal);
 
 });

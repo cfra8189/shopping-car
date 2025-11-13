@@ -75,3 +75,46 @@ OKAY!!!!
 listItem.classList.add('cart-item');
 
 This WORKS!!!
+
+=========================================================
+
+- Store Subtotal
+
+
+listItem.dataset.subtotal = subtotal;
+
+
+- Build HTML
+
+
+listItem.innerHTML = `
+        <span> ${productInput}</span>
+        <span> ${quantity} x $${unitPrice.toFixed(2)} =  <strong>$${subtotal.toFixed(2)}</strong></span>
+        <button class="remove-btn">Remove</button> 
+    `;
+
+This fills the new list item with text and tags. Shows:
+- Product name
+- Quantity
+- Unit price
+- Bold subtotal
+- The **Remove** button
+
+
+- Display on Page
+
+cart.appendChild(listItem);
+
+Creates a `<li>` and sticks it inside the list (`<ul id="cart">`). 
+
+Now I can see it on the page!
+
+--------------------------------------------------------------------
+
+- Update Total
+
+updateTotalPrice(subtotal);
+
+- This calls the separate `updateTotalPrice` function and sends it the item's subtotal. 
+
+- This function adds the amount to the running `totalPrice` variable and updates the text on the page.
